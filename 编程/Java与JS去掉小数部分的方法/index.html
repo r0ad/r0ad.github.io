@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Java与JS去掉小数部分的方法 | code trend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="java,spring,spring cloud,javascript">
+  
+  
+  
+    <link rel="alternate" href="/codetrend/atom.xml" title="code trend" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/codetrend/logo.svg">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/codetrend/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/codetrend/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/codetrend/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/codetrend/" id="logo">code trend</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/codetrend/" id="subtitle">专注软件技术发展趋势，传播软件技术</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/codetrend/."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="/codetrend/archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="/codetrend/about/"><i class="fa fa-user"></i> 关于</a>
+        
+          <a class="main-nav-link" href="/codetrend/atom.xml"><i class="fa fa-rss"></i> 订阅</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-编程/Java与JS去掉小数部分的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Java与JS去掉小数部分的方法
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-18T02:48:07.000Z" itemprop="datePublished">2022年02月18日</time>
+</span>
+      
+      
+        
+<span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>由于除法、编程语言等特性，小数计算总是可能无法获取到精确的结果。但是金额计算又要求有精确的结果，这样的矛盾可以通过整数计算加去除小数部分来获取想要的结果。</p>
+<ol>
+<li>乘法： 单价为9.99元的某物品购买9个，总价为89.91元。</li>
+<li>除法： 总价 89.90，数量为9，通过舍去小数部分的单价为 9.98。</li>
+</ol>
+<p>解决办法： 将元为单位的金额乘以100换算为分进行计算，对结果取整，除以100获得真实金额。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> price =  <span class="title class_">Math</span>.<span class="title function_">floor</span>((<span class="number">89.90</span>*<span class="number">100</span>)/<span class="number">9</span>)/<span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-处理方法"><a href="#JavaScript-处理方法" class="headerlink" title="JavaScript 处理方法"></a>JavaScript 处理方法</h2><h3 id="JavaScript-去掉小数部分的方法"><a href="#JavaScript-去掉小数部分的方法" class="headerlink" title="JavaScript 去掉小数部分的方法"></a>JavaScript 去掉小数部分的方法</h3><p>常用的去掉小数部分的方法：</p>
+<ul>
+<li>Math.ceil(.6)  // 向上取整，向上舍入到一个整数</li>
+<li>Math.floor(.6) // 向下取整，向下舍入到一个整数</li>
+<li>Math.round(.6) // 四舍五入，舍入到最近整数</li>
+<li>Number.toFixed(n) 四舍六入五成双,保留小数</li>
+</ul>
+<blockquote>
+<p>toFixed它是一个四舍六入五成双的方法(也叫银行家算法)，”四舍六入五成双”含义：对于位数很多的近似数，当有效位数确定后，其后面多余的数字应该舍去，只保留有效数字最末一位，这种修约（舍入）规则是“四舍六入五成双”，也即“4舍6入5凑偶”这里“四”是指≤4 时舍去，”六”是指≥6时进上，”五”指的是根据5后面的数字来定，当5后有数时，舍5入1；当5后无有效数字时，需要分两种情况来讲：①5前为奇数，舍5入1；②5前为偶数，舍5不进。（0是偶数）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> price = <span class="number">10.99</span>;</span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">var</span> needPay = <span class="built_in">parseFloat</span>(price * quantity);</span><br><span class="line"><span class="comment">// needPay的正确结果应该是76.93元  但是运行后发现needPay为76.93000000000001 </span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过 Number.toFixed(2) 方法修正。</li>
+<li>将元为单位的金额乘以100换算为分进行计算。s</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> price = <span class="number">10.99</span></span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span></span><br><span class="line"><span class="keyword">var</span> needPay = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="built_in">parseFloat</span>(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line"><span class="comment">// parseFloat(price*100 * quantity)的计算结果是7693.000000000001   使用Math.floor()方法向下取整，再除100  即为正确的结果</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript-保留小数两位的方法"><a href="#JavaScript-保留小数两位的方法" class="headerlink" title="JavaScript 保留小数两位的方法"></a>JavaScript 保留小数两位的方法</h3><p>通过 Number.toFixed(2) 方法实现任意小数的保留</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过 Number.toFixed(2) 方法</span></span><br><span class="line"><span class="keyword">var</span> price = <span class="number">10.9</span></span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span></span><br><span class="line"><span class="keyword">var</span> needPay = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="built_in">parseFloat</span>(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> needPay2 = needPay.<span class="title function_">toFixed</span>(<span class="number">2</span>)</span><br><span class="line"><span class="comment">// parseFloat(price*100 * quantity)的计算结果是7693.000000000001   使用Math.floor()方法向下取整，再除100  即为正确的结果</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-处理方法"><a href="#Java-处理方法" class="headerlink" title="Java 处理方法"></a>Java 处理方法</h2><h3 id="Java-去掉小数部分的方法"><a href="#Java-去掉小数部分的方法" class="headerlink" title="Java 去掉小数部分的方法"></a>Java 去掉小数部分的方法</h3><ul>
+<li>Math.ceil(0.6) //向上取整，向上舍入到一个整数</li>
+<li>Math.floor(0.6) //向下取整，向下舍入到一个整数</li>
+<li>Math.round(0.6) //四舍五入，舍入到最近整数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">10.99</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">quantity</span> <span class="operator">=</span> <span class="number">7</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">needPay</span> <span class="operator">=</span> Math.floor(Double.valueOf(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line">System.out.println(needPay);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java-保留小数两位的方法"><a href="#Java-保留小数两位的方法" class="headerlink" title="Java 保留小数两位的方法"></a>Java 保留小数两位的方法</h3><ul>
+<li>DecimalFormat</li>
+<li>String.format(“%.2f”, f)</li>
+<li>NumberFormat</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BigDecimalFormat</span> &#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">f</span> <span class="operator">=</span> <span class="number">111231.5585</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">BigDecimal</span> <span class="variable">bg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(f);</span><br><span class="line">        <span class="type">double</span> <span class="variable">f1</span> <span class="operator">=</span> bg.setScale(<span class="number">2</span>, BigDecimal.ROUND_HALF_UP).doubleValue();</span><br><span class="line">        System.out.println(f1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * DecimalFormat 转换最简便</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">DecimalFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DecimalFormat</span>(<span class="string">&quot;#.00&quot;</span>);</span><br><span class="line">        System.out.println(df.format(f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * String.format打印最简便</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(String.format(<span class="string">&quot;%.2f&quot;</span>, f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">NumberFormat</span> <span class="variable">nf</span> <span class="operator">=</span> NumberFormat.getNumberInstance();</span><br><span class="line">        nf.setMaximumFractionDigits(<span class="number">2</span>);</span><br><span class="line">        System.out.println(nf.format(f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">BigDecimalFormat</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimalFormat</span>();</span><br><span class="line">        f.m1();</span><br><span class="line">        f.m2();</span><br><span class="line">        f.m3();</span><br><span class="line">        f.m4();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/efd798b235ad">js金额计算解决精度问题 - 作者：春秋若北 - https://www.jianshu.com/p/efd798b235ad</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yw09041432/p/5842204.html">java保留小数点两位的4种方法 - https://www.cnblogs.com/yw09041432/p/5842204.html </a></li>
+</ul>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">JavaScript 处理方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E5%8E%BB%E6%8E%89%E5%B0%8F%E6%95%B0%E9%83%A8%E5%88%86%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">JavaScript 去掉小数部分的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0%E4%B8%A4%E4%BD%8D%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">JavaScript 保留小数两位的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">Java 处理方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E5%8E%BB%E6%8E%89%E5%B0%8F%E6%95%B0%E9%83%A8%E5%88%86%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">Java 去掉小数部分的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0%E4%B8%A4%E4%BD%8D%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">Java 保留小数两位的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">2.3.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/codetrend/%E7%BC%96%E7%A8%8B/Vue%E7%BB%84%E4%BB%B6%E5%BC%95%E5%85%A5%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          一种Vue组件引入报错解决方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/codetrend/%E7%BC%96%E7%A8%8B/Spring%E7%94%9F%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%A1%B9%E7%9B%AE%E5%85%A8%E6%99%AF%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">Spring 生态解决方案</div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E6%8A%8A%E5%B7%A5%E4%BD%9C%E5%BD%93%E5%81%9A%E7%83%AD%E7%88%B1/">把工作当做热爱</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/06-%E8%BF%BD%E8%B8%AA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">06-追踪微服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/05-%E7%9B%91%E6%8E%A7%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">05-监控微服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/04-%E5%AE%9E%E7%8E%B0RPC%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">04-实现RPC远程服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/02-%E5%8F%91%E5%B8%83%E5%92%8C%E5%BC%95%E7%94%A8%E6%9C%8D%E5%8A%A1/">02-发布和引用服务</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/codetrend/tags/%E5%89%8D%E7%AB%AF%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">前端编程</a> <a href="/codetrend/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/Java%E7%BC%96%E7%A0%81%E6%A0%87%E5%87%86%E6%8C%87%E5%8D%97/">Java编码标准指南</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/PaddlePaddle/">PaddlePaddle</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/">从0开始学微服务</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/codetrend/archives/2022/">2022年06月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/codetrend/archives/2021/">2021年11月</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/codetrend/tags/%E5%89%8D%E7%AB%AF%E7%BC%96%E7%A8%8B/" rel="tag">前端编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/codetrend/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://juejin.cn/">掘金</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://tech.meituan.com/">美团技术团队</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://efe.baidu.com/">百度EFE</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/codetrend/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/codetrend/atom.xml">订阅本站</a>
+        <span> | </span><a href="/codetrend/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2022 codeman.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/codetrend/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/codetrend/js/search.json.js"></script>
+
+
+  
+<script src="/codetrend/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/codetrend/js/script.js"></script>
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6e17ef6b36c9fdda22a20012ad8022c3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/codetrend/localshare/js/social-share.js"></script>
+
+  
+<script src="/codetrend/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    const host = 'https://r0ad.github.io'
+    const local = location.href
+    const white = ['localhost','127.0.0.1','l192.168']
+    let redirectFlag = true;
+    white.find(function(item){
+      if(local.indexOf(item) > -1){
+        redirectFlag =false
+      }
+    })
+    if(local && local.indexOf(host)===-1 && redirectFlag ){
+      location.replace(location.href.replace(location.origin,host))
+    }
+
+  </script>
+
+  </div>
+</body>
+</html>

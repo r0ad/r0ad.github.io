@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>code trend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="java,spring,spring cloud,javascript">
+  
+  
+  
+    <link rel="alternate" href="/codetrend/atom.xml" title="code trend" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/codetrend/logo.svg">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/codetrend/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/codetrend/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/codetrend/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/codetrend/" id="logo">code trend</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/codetrend/" id="subtitle">专注软件技术发展趋势，传播软件技术</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/codetrend/."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="/codetrend/archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="/codetrend/about/"><i class="fa fa-user"></i> 关于</a>
+        
+          <a class="main-nav-link" href="/codetrend/atom.xml"><i class="fa fa-rss"></i> 订阅</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  <article id="post-编程/Vue组件引入报错解决方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E7%BC%96%E7%A8%8B/Vue%E7%BB%84%E4%BB%B6%E5%BC%95%E5%85%A5%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">一种Vue组件引入报错解决方法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-22T02:48:07.000Z" itemprop="datePublished">2022年02月22日</time>
+</span>
+      
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="代码异常"><a href="#代码异常" class="headerlink" title="代码异常"></a>代码异常</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vue.<span class="property">runtime</span>.<span class="property">esm</span>.<span class="property">js</span>:<span class="number">587</span> [<span class="title class_">Vue</span> warn]: <span class="title class_">Unknown</span> custom <span class="attr">element</span>: &lt;search_ui&gt; - did you register the component correctly? <span class="title class_">For</span> recursive components, make sure to provide the <span class="string">&quot;name&quot;</span> option.</span><br><span class="line"></span><br><span class="line">found <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">---&gt; &lt;<span class="title class_">FormRenderHt</span>&gt; at src\components\<span class="title class_">FormRender</span>\<span class="variable language_">module</span>\form-ht.<span class="property">vue</span></span><br><span class="line">       &lt;<span class="title class_">HTUi</span>&gt; at src\components\<span class="title class_">FormRender</span>\widget\element\<span class="variable constant_">HT</span>.<span class="property">vue</span></span><br><span class="line">         &lt;<span class="title class_">ElRow</span>&gt;</span><br><span class="line">           &lt;<span class="title class_">ElForm</span>&gt; at packages/form/src/form.<span class="property">vue</span></span><br><span class="line">             &lt;<span class="title class_">FormRender</span>&gt; at src\components\<span class="title class_">FormRender</span>\<span class="variable language_">module</span>\form.<span class="property">vue</span></span><br><span class="line">               &lt;<span class="title class_">FormRender2</span>&gt; at src\components\<span class="title class_">FormRender</span>\<span class="variable language_">module</span>\form2.<span class="property">vue</span></span><br><span class="line">                 &lt;<span class="title class_">ProductEdit</span>&gt; at src\views\ordercreate\product\productInfoEdit.<span class="property">vue</span></span><br><span class="line">                   &lt;<span class="title class_">Index</span>&gt; at src\views\ordercreate\main\index.<span class="property">vue</span></span><br><span class="line">                     &lt;<span class="title class_">App</span>&gt; at src\<span class="title class_">App</span>.<span class="property">vue</span></span><br><span class="line">                       &lt;<span class="title class_">Root</span>&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><ul>
+<li>组件引入方法有问题，不符合vue语法。例如 <code>import</code> 和 <code>components</code> 都需要放入引入的自定义组件。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">FormRenderHt</span> <span class="keyword">from</span> <span class="string">&#x27;@/components/FormRender/module/form-ht&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">components</span>: &#123; <span class="title class_">FormRenderHt</span> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>组件引入方法无问题，不符合vue机制。</li>
+</ul>
+<p>通过对比分析，排除第一种异常情况，聚焦在第二种情况。可能的原因出现在：</p>
+<ol>
+<li>异步引入产生的组件延迟引入，一个同步异步问题。（解决，修改组件引入都为异步）</li>
+<li>组件嵌套太多，vue本身不支持这么多嵌套。(排除，支持多级嵌套)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// FormRenderHt 内部存在异步组件， FormRenderHt的引入也采用懒加载引入</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">FormRenderHt</span> = (<span class="params"></span>) =&gt; <span class="title function_">import</span>(<span class="string">&#x27;@/components/FormRender/module/form-ht&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">components</span>: &#123; <span class="title class_">FormRenderHt</span> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/lazy-loading.html">Vue 路由懒加载 - https://router.vuejs.org/zh/guide/advanced/lazy-loading.html</a></li>
+</ul>
+
+        
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/codetrend/tags/%E5%89%8D%E7%AB%AF%E7%BC%96%E7%A8%8B/" rel="tag">前端编程</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-编程/Java与JS去掉小数部分的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E7%BC%96%E7%A8%8B/Java%E4%B8%8EJS%E5%8E%BB%E6%8E%89%E5%B0%8F%E6%95%B0%E9%83%A8%E5%88%86%E7%9A%84%E6%96%B9%E6%B3%95/">Java与JS去掉小数部分的方法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-18T02:48:07.000Z" itemprop="datePublished">2022年02月18日</time>
+</span>
+      
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>由于除法、编程语言等特性，小数计算总是可能无法获取到精确的结果。但是金额计算又要求有精确的结果，这样的矛盾可以通过整数计算加去除小数部分来获取想要的结果。</p>
+<ol>
+<li>乘法： 单价为9.99元的某物品购买9个，总价为89.91元。</li>
+<li>除法： 总价 89.90，数量为9，通过舍去小数部分的单价为 9.98。</li>
+</ol>
+<p>解决办法： 将元为单位的金额乘以100换算为分进行计算，对结果取整，除以100获得真实金额。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> price =  <span class="title class_">Math</span>.<span class="title function_">floor</span>((<span class="number">89.90</span>*<span class="number">100</span>)/<span class="number">9</span>)/<span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-处理方法"><a href="#JavaScript-处理方法" class="headerlink" title="JavaScript 处理方法"></a>JavaScript 处理方法</h2><h3 id="JavaScript-去掉小数部分的方法"><a href="#JavaScript-去掉小数部分的方法" class="headerlink" title="JavaScript 去掉小数部分的方法"></a>JavaScript 去掉小数部分的方法</h3><p>常用的去掉小数部分的方法：</p>
+<ul>
+<li>Math.ceil(.6)  // 向上取整，向上舍入到一个整数</li>
+<li>Math.floor(.6) // 向下取整，向下舍入到一个整数</li>
+<li>Math.round(.6) // 四舍五入，舍入到最近整数</li>
+<li>Number.toFixed(n) 四舍六入五成双,保留小数</li>
+</ul>
+<blockquote>
+<p>toFixed它是一个四舍六入五成双的方法(也叫银行家算法)，”四舍六入五成双”含义：对于位数很多的近似数，当有效位数确定后，其后面多余的数字应该舍去，只保留有效数字最末一位，这种修约（舍入）规则是“四舍六入五成双”，也即“4舍6入5凑偶”这里“四”是指≤4 时舍去，”六”是指≥6时进上，”五”指的是根据5后面的数字来定，当5后有数时，舍5入1；当5后无有效数字时，需要分两种情况来讲：①5前为奇数，舍5入1；②5前为偶数，舍5不进。（0是偶数）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> price = <span class="number">10.99</span>;</span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">var</span> needPay = <span class="built_in">parseFloat</span>(price * quantity);</span><br><span class="line"><span class="comment">// needPay的正确结果应该是76.93元  但是运行后发现needPay为76.93000000000001 </span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过 Number.toFixed(2) 方法修正。</li>
+<li>将元为单位的金额乘以100换算为分进行计算。s</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> price = <span class="number">10.99</span></span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span></span><br><span class="line"><span class="keyword">var</span> needPay = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="built_in">parseFloat</span>(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line"><span class="comment">// parseFloat(price*100 * quantity)的计算结果是7693.000000000001   使用Math.floor()方法向下取整，再除100  即为正确的结果</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript-保留小数两位的方法"><a href="#JavaScript-保留小数两位的方法" class="headerlink" title="JavaScript 保留小数两位的方法"></a>JavaScript 保留小数两位的方法</h3><p>通过 Number.toFixed(2) 方法实现任意小数的保留</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过 Number.toFixed(2) 方法</span></span><br><span class="line"><span class="keyword">var</span> price = <span class="number">10.9</span></span><br><span class="line"><span class="keyword">var</span> quantity = <span class="number">7</span></span><br><span class="line"><span class="keyword">var</span> needPay = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="built_in">parseFloat</span>(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> needPay2 = needPay.<span class="title function_">toFixed</span>(<span class="number">2</span>)</span><br><span class="line"><span class="comment">// parseFloat(price*100 * quantity)的计算结果是7693.000000000001   使用Math.floor()方法向下取整，再除100  即为正确的结果</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-处理方法"><a href="#Java-处理方法" class="headerlink" title="Java 处理方法"></a>Java 处理方法</h2><h3 id="Java-去掉小数部分的方法"><a href="#Java-去掉小数部分的方法" class="headerlink" title="Java 去掉小数部分的方法"></a>Java 去掉小数部分的方法</h3><ul>
+<li>Math.ceil(0.6) //向上取整，向上舍入到一个整数</li>
+<li>Math.floor(0.6) //向下取整，向下舍入到一个整数</li>
+<li>Math.round(0.6) //四舍五入，舍入到最近整数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">10.99</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">quantity</span> <span class="operator">=</span> <span class="number">7</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">needPay</span> <span class="operator">=</span> Math.floor(Double.valueOf(price*<span class="number">100</span> * quantity))/<span class="number">100</span>;</span><br><span class="line">System.out.println(needPay);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java-保留小数两位的方法"><a href="#Java-保留小数两位的方法" class="headerlink" title="Java 保留小数两位的方法"></a>Java 保留小数两位的方法</h3><ul>
+<li>DecimalFormat</li>
+<li>String.format(“%.2f”, f)</li>
+<li>NumberFormat</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BigDecimalFormat</span> &#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">f</span> <span class="operator">=</span> <span class="number">111231.5585</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">BigDecimal</span> <span class="variable">bg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(f);</span><br><span class="line">        <span class="type">double</span> <span class="variable">f1</span> <span class="operator">=</span> bg.setScale(<span class="number">2</span>, BigDecimal.ROUND_HALF_UP).doubleValue();</span><br><span class="line">        System.out.println(f1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * DecimalFormat 转换最简便</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">DecimalFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DecimalFormat</span>(<span class="string">&quot;#.00&quot;</span>);</span><br><span class="line">        System.out.println(df.format(f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * String.format打印最简便</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(String.format(<span class="string">&quot;%.2f&quot;</span>, f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">NumberFormat</span> <span class="variable">nf</span> <span class="operator">=</span> NumberFormat.getNumberInstance();</span><br><span class="line">        nf.setMaximumFractionDigits(<span class="number">2</span>);</span><br><span class="line">        System.out.println(nf.format(f));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">BigDecimalFormat</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimalFormat</span>();</span><br><span class="line">        f.m1();</span><br><span class="line">        f.m2();</span><br><span class="line">        f.m3();</span><br><span class="line">        f.m4();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/efd798b235ad">js金额计算解决精度问题 - 作者：春秋若北 - https://www.jianshu.com/p/efd798b235ad</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yw09041432/p/5842204.html">java保留小数点两位的4种方法 - https://www.cnblogs.com/yw09041432/p/5842204.html </a></li>
+</ul>
+
+        
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-编程/Spring生态解决方案项目全景介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E7%BC%96%E7%A8%8B/Spring%E7%94%9F%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%A1%B9%E7%9B%AE%E5%85%A8%E6%99%AF%E4%BB%8B%E7%BB%8D/">Spring 生态解决方案</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-15T16:00:00.000Z" itemprop="datePublished">2022年02月16日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a> > <a class="article-category-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/Spring/">Spring</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Microservices 微服务</li>
+<li>Reactive  响应式编程</li>
+<li>Event Driven 事件驱动编程</li>
+<li>Cloud 云服务</li>
+<li>Web Applications 网络服务应用</li>
+<li>Serverless 无服务计算</li>
+<li>Batch 批量计算</li>
+</ul>
+<h2 id="Spring-开发软件框架"><a href="#Spring-开发软件框架" class="headerlink" title="Spring 开发软件框架"></a>Spring 开发软件框架</h2><h3 id="Microservices-微服务解决方案"><a href="#Microservices-微服务解决方案" class="headerlink" title="Microservices 微服务解决方案"></a>Microservices 微服务解决方案</h3><p>Spring Boot 可以作为最小单元进行微服务架构的开发。<br>Spring Cloud 提供容错、易管理的微服务架构方案。</p>
+<p>Microservice architectures are the ‘new normal’. Building small, self-contained, ready to run applications can bring great flexibility and added resilience to your code. Spring Boot’s many purpose-built features make it easy to build and run your microservices in production at scale. And don’t forget, no microservice architecture is complete without Spring Cloud ‒ easing administration and boosting your fault-tolerance.</p>
+<ul>
+<li>What are microservices?</li>
+</ul>
+<p>Microservices are a modern approach to software whereby application code is delivered in small, manageable pieces, independent of others.</p>
+<ul>
+<li>Why build microservices?</li>
+</ul>
+<p>Their small scale and relative isolation can lead to many additional benefits, such as easier maintenance, improved productivity, greater fault tolerance, better business alignment, and more.</p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E7%BC%96%E7%A8%8B/Spring%E7%94%9F%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%A1%B9%E7%9B%AE%E5%85%A8%E6%99%AF%E4%BB%8B%E7%BB%8D/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-技术人生/常见经济周期说明" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E5%B8%B8%E8%A7%81%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%E8%AF%B4%E6%98%8E/">常见经济周期说明</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-10T16:00:00.000Z" itemprop="datePublished">2022年02月11日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>经济学们家早就研究出了3-60年的循环周期。</p>
+<ul>
+<li>每3-4年，企业的原材料库存会由空到满，由满到空，这个库存循环，叫基钦周期。</li>
+<li>每8-10年，企业的生产设备就会由新购到淘汰，由淘汰到新采，这个设备更迭，是朱格拉周期。</li>
+<li>每15-25年，房地产和建筑业就会由新建到过剩，由谷底到高峰，这个地产周期，叫库兹涅茨周期。</li>
+<li>每45-60年，顶尖科技就会由兴盛到衰落，由衰落到新生，这个技术变革，叫康德拉季耶夫周期（也叫康波周期）。</li>
+</ul>
+<p>每一个周期，都有萌芽、发展、高峰、衰退，如波浪起伏。</p>
+<ul>
+<li>在萌芽期，创业氛围浓厚，英雄崭露头角，就像恒大当年，是广东地产四小虎，</li>
+<li>在发展期，央行刺激经济，社会现金充足，有志者快马加鞭大干快上，各路大佬大鳄脱颖而出，</li>
+<li>在高峰期，社会流动泛滥，股市一片红火，企业家不务正业泡女明星，白领们都想超越巴菲特，</li>
+<li>在衰退期，各界收紧银根，杠杆纷纷暴雷，过剩产能出清，在萧条和反思中开启下一轮循环。
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E5%B8%B8%E8%A7%81%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%E8%AF%B4%E6%98%8E/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-技术人生/编码设计过程效率提升和开源工具完美使用指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E7%BC%96%E7%A0%81%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87%E5%92%8C%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7%E5%AE%8C%E7%BE%8E%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">编码设计过程效率提升和开源工具完美使用指南</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-10T16:00:00.000Z" itemprop="datePublished">2022年02月11日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在日常的 Java Web 开发过程中，笔者已经能够找到所有的免费的编码软件和办公软件替代集合，其中大部分是开源的。以 MySql 数据库客户端为例，使用 <code>MyCli</code> 自动提示和高亮进行快速的 Sql 编写，基于 Python 语言编写。使用 <code>PlantUml</code> 能绘制出目前软件设计过程的建模图形，基于 Java 和 Graphviz。老牌的 WPS 能够满足日常办公 Offie 系列的文档编写和查阅，值得称赞的是在以 Windows Mac 为主流的软件氛围下，它提供的 Debian / CentOS 也很好用。还有一个值得注意的现象是有些免费软件是强强联合的产物，例如 VS Code 、 VirutualBox 、MySQL Workbench 。</p>
+<p>工具确实提升了办公和开发的效率，过度的依赖工具却并不是好事。国外公司、组织或基金会大多数都以开源为导向的进行软件编写。开源并不等于无限制使用，因为涉及到很多开源协议。笔者这里不细提。至少目前在完全不用盗版软件的情况下可以完成编码、设计等任务。总的来说，开源作为一个全球的协作编码过程，让开发者或组织都受益。在开源的氛围中，站在巨人的肩膀上，个人开发者也可以很容易写出一个软件。</p>
+<p>以下为全部工具集合。</p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E7%BC%96%E7%A0%81%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87%E5%92%8C%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7%E5%AE%8C%E7%BE%8E%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-技术人生/项目延期的解决办法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E9%A1%B9%E7%9B%AE%E5%BB%B6%E6%9C%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">项目延期的解决办法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-10T16:00:00.000Z" itemprop="datePublished">2022年02月11日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>项目延期了，一个是会导致做了的东西没有价值，丧失了努力的动力。二个是项目挤压越来越多，导致后续跟不上项目迭代，加班加点越来越多。</p>
+<p>导致项目延期的原因有很多：</p>
+<ol>
+<li>需求变动，项目延后或者提前发布。</li>
+<li>人员安排不合理，无法按时完成。</li>
+<li>开发人员请假有事忙着其他的业务做。</li>
+</ol>
+<p>来自军哥的解决办法分享：</p>
+<ol>
+<li>提前识别依赖。前后端分离中的接口依赖，服务接口的依赖。</li>
+<li>识别关键路径。新的迭代项目都有关键路径，比如电商环境的下单流程，提前打通关键流程就可以提高信心。</li>
+<li>提前发布预生产环境。提前一天发布到预生产环境，倒逼产品测试。</li>
+</ol>
+
+        
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-技术人生/认真生活认真工作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E8%AE%A4%E7%9C%9F%E7%94%9F%E6%B4%BB%E8%AE%A4%E7%9C%9F%E5%B7%A5%E4%BD%9C/">认真生活认真工作</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-09T16:00:00.000Z" itemprop="datePublished">2022年02月10日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>好好工作，好好读书，认真生活。</p>
+</blockquote>
+<p>只需在日常生活中扮演好社会赋予自己的角色，或者对于自己应该做好的事情——公务、家务、学习——都要尽心尽力，孜孜不倦，锲而不舍。这个过程本身就是磨炼人格的修行。</p>
+<p>第一种人，是不想工作但不得不工作的人。</p>
+<p>1、 这种人，如果是员工，他们追求“钱多、舒适、宽容的工作”；如果是创业者，他们追求“赚快钱”。他们面对现实中容易失望，容易抱怨公司与外部环境，或经常跳槽，或浅尝辄止。<br>2、 他们总以“没找到自己喜欢的工作”为借口，在工作中不用心，不耐烦，不全心全意投入。<br>3、 碰到困难与挫折，容易找借口放弃努力。</p>
+<p>第二种人，是赚钱第一、工作第二的人。</p>
+<p>这种人对待工作与责任不很用心，只求完成不求完美，有时甚至为了赚钱而不择手段，牺牲工作与责任，损人利已。</p>
+<p>这两类人，他们有一个共同点，就是都不尊重工作、不忠诚于工作与责任。对他们而言，工作不是生命真正的需求，是为了谋生不得不做的事情，是一旦有了条件后想要摆脱的事情。</p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E8%AE%A4%E7%9C%9F%E7%94%9F%E6%B4%BB%E8%AE%A4%E7%9C%9F%E5%B7%A5%E4%BD%9C/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Java编码标准指南/规则3-数字-10条-不要使用BigDecimal对象构造浮点数据" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/Java%E7%BC%96%E7%A0%81%E6%A0%87%E5%87%86%E6%8C%87%E5%8D%97/%E8%A7%84%E5%88%993-%E6%95%B0%E5%AD%97-10%E6%9D%A1-%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8BigDecimal%E5%AF%B9%E8%B1%A1%E6%9E%84%E9%80%A0%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8D%AE/">规则3-数字-10条-不要使用BigDecimal对象构造浮点数据</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-02-06T16:00:00.000Z" itemprop="datePublished">2022年02月07日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/Java%E7%BC%96%E7%A0%81%E6%A0%87%E5%87%86%E6%8C%87%E5%8D%97/">Java编码标准指南</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>因为浮点数字总是不准确的， 通过 <code>new BigDecimal(double)</code> 获取到的数据总是不准确的。</p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/Java%E7%BC%96%E7%A0%81%E6%A0%87%E5%87%86%E6%8C%87%E5%8D%97/%E8%A7%84%E5%88%993-%E6%95%B0%E5%AD%97-10%E6%9D%A1-%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8BigDecimal%E5%AF%B9%E8%B1%A1%E6%9E%84%E9%80%A0%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8D%AE/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-技术人生/自由软件与RichardStallmen" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%E4%B8%8ERichardStallmen/">自由软件与 Richard Stallmen</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-11-29T16:00:00.000Z" itemprop="datePublished">2021年11月30日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="自由软件与-Richard-Stallmen"><a href="#自由软件与-Richard-Stallmen" class="headerlink" title="自由软件与 Richard Stallmen"></a>自由软件与 Richard Stallmen</h1><blockquote>
+<p>“自由软件”和“开源”基本上指的是同一范围的程序。然而，出于不同的价值观，它们对这些程序的看法大相径庭。自由软件运动为用户的计算自由而战斗；这是一个为自由和公正而战的运动。相反，开源理念重视的是实用优势而不是原则利害。我们因此不赞同开源运动，也不使用开源这个词。</p>
+</blockquote>
+<p>“要说一个软件是“自由”的，这意味着它尊重用户的基本自由：自由地运行这个软件，学习和修改它，以及重新发布它的原版或修改版。这是个关于自由权利的问题，而非价格高低。我们讨论的自由是如同自由言论般的权利，不是免费赠饮一样的大派送。”</p>
+<p>“开源软件和自由软件这两个词在很大程度上描述的是同一类软件，但是它们所基于的价值观却有着本质上的区别。对于自由软件运动而言，自由软件是一个道德底线，是对用户自由的基本尊重。开源软件则与此不同，开源哲学考虑的是怎么做把软件做得“更好”—仅仅从实用的角度。开源的哲学里，非自由软件之所以不好，是因为他们采用了一种劣等的开发方式。”</p>
+<p>”作为自由软件运动的成员，我们并不将开源阵营视为敌人。我们的敌人是专有（非自由）软件。但我们希望人们至少应该知道，我们所捍卫的是用户的自由。所以我们不愿被开源支持者们贴错标签。我们倡导的并不是 “开源”，我们反对的也不是 “闭源”。为了清楚起见，我们要避免使用这些词汇。”</p>
+<p><em><strong>自由软件是一种软件分发和开发模式以及自由的价值观，开源软件是一种软件分发和开发模式。</strong></em></p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%E4%B8%8ERichardStallmen/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-飞桨PaddlePaddle/03-01-案例学习-手写数字识别任务" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/codetrend/%E9%A3%9E%E6%A1%A8PaddlePaddle/03-01-%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E4%BB%BB%E5%8A%A1/">03-01-案例学习-手写数字识别任务</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-11-11T16:00:00.000Z" itemprop="datePublished">2021年11月12日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/codetrend/categories/PaddlePaddle/">PaddlePaddle</a>
+  </div>
+
+      
+      
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="03-01-案例学习-手写数字识别任务"><a href="#03-01-案例学习-手写数字识别任务" class="headerlink" title="03-01-案例学习-手写数字识别任务"></a>03-01-案例学习-手写数字识别任务</h1><p>数字识别是计算机从纸质文档、照片或其他来源接收、理解并识别可读的数字的能力，目前比较受关注的是手写数字识别。手写数字识别是一个典型的图像分类问题，已经被广泛应用于汇款单号识别、手写邮政编码识别等领域，大大缩短了业务处理时间，提升了工作效率和质量。</p>
+<ul>
+<li>任务输入：一系列手写数字图片，其中每张图片都是28x28的像素矩阵。</li>
+<li>任务输出：经过了大小归一化和居中处理，输出对应的0~9的数字标签。</li>
+</ul>
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+        <p class="article-more-link">
+          <a href="/codetrend/%E9%A3%9E%E6%A1%A8PaddlePaddle/03-01-%E6%A1%88%E4%BE%8B%E5%AD%A6%E4%B9%A0-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E4%BB%BB%E5%8A%A1/#more">Read More</a>
+        </p>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+
+    <nav id="page-nav">
+
+<a class="extend prev" rel="prev" href="/codetrend/">上一页</a><a class="page-number" href="/codetrend/">1</a><span class="page-number current">2</span><a class="page-number" href="/codetrend/page/3/">3</a><a class="extend next" rel="next" href="/codetrend/page/3/">下一页</a>
+</nav>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/codetrend/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/%E6%8A%8A%E5%B7%A5%E4%BD%9C%E5%BD%93%E5%81%9A%E7%83%AD%E7%88%B1/">把工作当做热爱</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/06-%E8%BF%BD%E8%B8%AA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">06-追踪微服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/05-%E7%9B%91%E6%8E%A7%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">05-监控微服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/04-%E5%AE%9E%E7%8E%B0RPC%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">04-实现RPC远程服务调用</a>
+          </li>
+        
+          <li>
+            <a href="/codetrend/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/02-%E5%8F%91%E5%B8%83%E5%92%8C%E5%BC%95%E7%94%A8%E6%9C%8D%E5%8A%A1/">02-发布和引用服务</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/codetrend/tags/%E5%89%8D%E7%AB%AF%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">前端编程</a> <a href="/codetrend/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/Java%E7%BC%96%E7%A0%81%E6%A0%87%E5%87%86%E6%8C%87%E5%8D%97/">Java编码标准指南</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/PaddlePaddle/">PaddlePaddle</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E6%9C%8D%E5%8A%A1/">从0开始学微服务</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F/">技术人生</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/codetrend/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/codetrend/archives/2022/">2022年06月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/codetrend/archives/2021/">2021年11月</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/codetrend/tags/%E5%89%8D%E7%AB%AF%E7%BC%96%E7%A8%8B/" rel="tag">前端编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/codetrend/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://juejin.cn/">掘金</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://tech.meituan.com/">美团技术团队</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="https://efe.baidu.com/">百度EFE</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/codetrend/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/codetrend/atom.xml">订阅本站</a>
+        <span> | </span><a href="/codetrend/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2022 codeman.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/codetrend/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/codetrend/js/search.json.js"></script>
+
+
+  
+<script src="/codetrend/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/codetrend/js/script.js"></script>
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6e17ef6b36c9fdda22a20012ad8022c3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/codetrend/localshare/js/social-share.js"></script>
+
+  
+<script src="/codetrend/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    const host = 'https://r0ad.github.io'
+    const local = location.href
+    const white = ['localhost','127.0.0.1','l192.168']
+    let redirectFlag = true;
+    white.find(function(item){
+      if(local.indexOf(item) > -1){
+        redirectFlag =false
+      }
+    })
+    if(local && local.indexOf(host)===-1 && redirectFlag ){
+      location.replace(location.href.replace(location.origin,host))
+    }
+
+  </script>
+
+  </div>
+</body>
+</html>
